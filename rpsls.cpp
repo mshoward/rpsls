@@ -3,7 +3,8 @@
 #include <list>
 #include <map>
 #include <utility>
-
+#include <ctime>
+#include <cstdlib>
 //using namespace std;
 
 ///returns first occurance of string in mapped, between start and end inclusively, or end+1 if not found
@@ -26,6 +27,7 @@ int firstOf(std::string str, std::map<int, std::string> mapped,int start, int en
 
 int main()
 {
+	std::srand(std::time(0));
 	std::map <int, std::string> choices;
 	choices[1] = "rock";
 	choices[2] = "paper";
@@ -60,6 +62,7 @@ int main()
 	winner[mp(5,3)] = 1;
 	winner[mp(5,4)] = 2;
 	winner[mp(5,5)] = 0;
+	
 	std::string pick = "";
 	std::getline(std::cin, pick);
 	
